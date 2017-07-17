@@ -123,6 +123,8 @@ class ImageResize
     public function imageCreateJpegfromExif($filename){
       $img = imagecreatefromjpeg($filename);
       
+      return $img;
+      
       if (!function_exists('exif_read_data') || !isset($this->source_info['APP1'])  || strpos ($this->source_info['APP1'], 'Exif') !== 0) {
           return $img;
       }
